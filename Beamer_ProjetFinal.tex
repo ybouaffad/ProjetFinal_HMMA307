@@ -69,6 +69,8 @@ Université de Montpellier \\
 \label{sec:motiv}
 \section{Modèle de comptage}
 \label{sec:motiv}
+\section{Modèle de dénombrement suivant les bryozoaires }
+\label{sec:motiv}
 \section{Conclusion}
 \label{sec:motiv}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,7 +95,7 @@ Pour tester s'il y a un effet de modification sur le nombre d'espèces individue
 \visible<1->{\item \textbf{glmer sur R}}
 \end{frame}
 
-\begin{frame}{Hypohèses}
+\begin{frame}{Hypothèses}
  \visible<1->{\item \textbf{1.}}
  Les observés y sont indépendants, conditionnés par certains prédicteurs x.\\
  \visible<1->{\item \textbf{2.}}Les réponses proviennent d'une distribution connue de la famille exponentielle, avec une relation de variance moyenne connue.\\
@@ -112,7 +114,7 @@ Pour tester s'il y a un effet de modification sur le nombre d'espèces individue
 \end{frame}
 
 
-\begin{frame}{données binaires : hypothèses}
+\begin{frame}{données binaires : Test d'hypothèses}
 
 En examinant brièvement nos hypothèses,nous ne pouvons pas vérifier les hypothèses 1 et 4 , mais elles seront vraies si nous échantillonnons au hasard. Nous devrions vérifier les Hypothèses 2 et 3,  avec les graphiques résiduels, mais étant donné ses défauts, nous ne sommes pas sûrs. L'hypothèse 5 est difficile à vérifier en général et n'est pas cruciale.
 
@@ -122,7 +124,7 @@ En examinant brièvement nos hypothèses,nous ne pouvons pas vérifier les hypot
 
 \begin{frame}{Résultat}
     
- \visible<1->{\item \textbf{Bootsrapping}}\\
+ \visible<1->{\item \textbf{Bootstrapping}}\\
  Procédure statistique qui rééchantillonne un seul jeu de données pour créer de nombreux échantillons simulés. 
     
     
@@ -147,10 +149,19 @@ Une fois de plus, les graphiques des résidus ne sont pas très utiles, mais nou
 \end{frame}
 
 
+\begin{frame}{Dénombrement à partir de Schizoporella errata}
+
+ \visible<1->{\item \textbf{Rien de concluant}}\\
+
+
+    
+\end{frame}
+
+
 \begin{frame}{Conclusion}
 
 J'ai eu beaucoup de difficulté à pouvoir recoder le code en python surtout à cause de la fonction glmer. Cela m'a pris beaucoup de temps et je regrette la pauvreté de mon beamer.
-Cependant j'ai pu à travers ce jeu de données comprendre la démarche de la statiscienne et l'impact écologique qu'elle prouve.
+Cependant j'ai pu à travers ce jeu de données comprendre la démarche de la statiscienne et l'impact écologique qu'elle ne prouve pas mais soulève.
     
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
