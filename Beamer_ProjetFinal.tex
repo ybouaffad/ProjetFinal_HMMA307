@@ -1,51 +1,159 @@
-\documentclass[12pt,compress]{beamer}
+\documentclass[unknownkeysallowed]{beamer}
+\usepackage[french,english]{babel}
+\usepackage{beamer_js}
+\usepackage{shortcuts_js}
+\usepackage{etex}
+\usepackage{csquotes}
+\usepackage{fourier}
+\nocite{*}
+\addbibresource{biblio.bib}
 
-\usepackage[utf8]{inputenc}
-\usepackage[french]{babel}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{subcaption}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage[justification=centering]{caption}
-
-\usetheme{Warsaw}
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{itemize items}[triangle]
-\makeatletter
-\captionsetup[figure]{labelformat=empty}
-%\definecolor{beamer@blendedblue}{rgb}{0.4, 0.6, 0.8}
-\definecolor{beamer@blendedblue}{rgb}{0.13, 0.67, 0.8}
-\setbeamercolor{structure}{fg=beamer@blendedblue}
-\setbeamercolor*{palette quaternary}{fg=black,bg=white!80!gray } %bg=couleur à gauche header back
-\defbeamertemplate*{footline}{shadow theme}
-{%
-  \leavevmode%
-  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle%
-  \end{beamercolorbox}}%
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
-    \usebeamerfont{author in head/foot}\hfill\insertframenumber\,/\,\inserttotalframenumber
-  \end{beamercolorbox}%
-  \vskip0pt%
-}
-
-\setbeamercolor{block title alerted}{fg=black,bg=blue}
-%body
-\setbeamercolor{block body alerted}{fg=black!90,bg=beamer@blendedblue}
-
-
-\title{}
-\author{Yani Bouaffad\\$\ $ \\
-        HMMA307}
-\date{07 Décembre 2020}
-
+% importer bibilo !!!!!!!!!!!!!! voir projet file attente
 \begin{document}
 
-\maketitle
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%             Headers               %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\bigskip
+\bigskip
+\begin{center}{
+\LARGE\color{marron}
+\textbf{HMMA307 : \\ Modèle linéaire généralisé mixte sur jeu de données Estuary}
+\textbf{ }\\
+\vspace{0.5cm}
+}
+
+\color{marron}
+\textbf{}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{center}
+\textbf{Yani Bouaffad} \\
+\vspace{0.1cm}
+Université de Montpellier \\
+\end{center}
+\centering
+\includegraphics[width=0.13\textwidth]{Logo}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%       PLAN      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Sommaire}
+\tableofcontents[hideallsubsections]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
+\label{sec:motiv}
+\section{Modèle binaire}
+\label{sec:motiv}
+\section{Modèle de comptage}
+\label{sec:motiv}
+\section{Conclusion}
+\label{sec:motiv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Introduction}
+\begin{itemize}\setlength{\itemsep}{5pt}
+\visible<1->{\item \textbf{Données : Estuary}}
+\visible<1->{\item \textbf{Modele : GLMM}}
+\visible<1->{\item \textbf{Analyse : dénombrement et la présences/ absences d'espèces individuelles}}
+
+\\
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{}
+
+Pour tester s'il y a un effet de modification sur le nombre d'espèces individuelles et la présence / absence,nous devons utiliser des modèles mixtes linéaires généralisés.
+
+\visible<1->{\item \textbf{glmer sur R}}
+\end{frame}
+
+\begin{frame}{Hypohèses}
+ \visible<1->{\item \textbf{1.}}
+ Les observés y sont indépendants, conditionnés par certains prédicteurs x.\\
+ \visible<1->{\item \textbf{2.}}Les réponses proviennent d'une distribution connue de la famille exponentielle, avec une relation de variance moyenne connue.\\
+ \visible<1->{\item \textbf{3.}} Il existe une relation en ligne droite entre une fonction connue (lien) de la moyenne de y et les prédicteurs x et effets aléatoires z.\\
+ \visible<1->{\item \textbf{4.}} Effets aléatoires z sont indépendants de y.\\
+ \visible<1->{\item \textbf{5.}} Effets aléatoires z sont normalement distribués.\\
+\end{frame}
+\begin{frame}{données binaires}
+
+
+
+\visible<1->{\item \textbf{1.Tracés résiduels difficiles à interpréter}}
+
+\visible<1->{\item \textbf{2.On ne peut pas trouver de modèle}}
+
+\end{frame}
+
+
+\begin{frame}{données binaires : hypothèses}
+
+En examinant brièvement nos hypothèses,nous ne pouvons pas vérifier les hypothèses 1 et 4 , mais elles seront vraies si nous échantillonnons au hasard. Nous devrions vérifier les Hypothèses 2 et 3,  avec les graphiques résiduels, mais étant donné ses défauts, nous ne sommes pas sûrs. L'hypothèse 5 est difficile à vérifier en général et n'est pas cruciale.
+
+
+\end{frame}
+
+
+\begin{frame}{Résultat}
+    
+ \visible<1->{\item \textbf{Bootsrapping}}\\
+ Procédure statistique qui rééchantillonne un seul jeu de données pour créer de nombreux échantillons simulés. 
+    
+    
+La p-value obtenue est supérieure à la valeur seuil de 0,05 et ainsi, on ne peut pas rejeter l'hypothèse nulle : qu'il n'y a pas d'effet de la variable modification sur la présence d'hydroïdes.
+    
+
+\end{frame}
+
+
+
+\begin{frame}{Données de comptage}
+
+ \visible<1->{\item \textbf{glmer avec la loi de poisson.}}\\
+
+Une fois de plus, les graphiques des résidus ne sont pas très utiles, mais nous avons au moins une idée du caractère raisonnable de l’hypothèse de la variance. Il n'y a pas de forme d'éventail évidente, donc un modèle de Poisson semble correct.
+
+ \visible<1->{\item \textbf{Bootsrapping}}\\
+ 
+ La valeur p obtenue est supérieure à la valeur seuil de 0,05 et donc, nous ne pouvons pas rejeter l'hypothèse nulle, à savoir qu'il n'y a pas d'effet de modification sur l'abondance des hydroïdes.
+ 
+ 
+\end{frame}
+
+
+\begin{frame}{Conclusion}
+
+J'ai eu beaucoup de difficulté à pouvoir recoder le code en python surtout à cause de la fonction glmer. Cela m'a pris beaucoup de temps et je regrette la pauvreté de mon beamer.
+Cependant j'ai pu à travers ce jeu de données comprendre la démarche de la statiscienne et l'impact écologique qu'elle prouve.
+    
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \end{document}

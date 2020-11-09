@@ -81,7 +81,7 @@ $\epsilon$ est un vecteur colonne de taille N, des résidus, la partie de y qui 
 
 \section{Modèle de présence ou d'absence d'hydroïdes}
 
-Pour modéliser la présence ou absence d'hydroïdes, nous créons d'abord une variable, HydroidPres, qui vaut 1 lorsque les Hydroids sont présents et 0 sinon. (cf fichier .ipynb)
+Pour modéliser la présence ou absence d'hydroïdes, nous créons d'abord une variable, HydroidPres, qui vaut 1 lorsque les hydroïdes sont présents et 0 sinon. (cf fichier .ipynb)
 Ce reparamétrage des données va nous permettre de faire un modèle de présence ou d'abscence d'hydroïdes.
 
 \vspace{2cm}
@@ -89,14 +89,14 @@ Ce reparamétrage des données va nous permettre de faire un modèle de présenc
 Le graphique suivant donne le résumé du modèle (montre la visualisation de l'estimation de l'interception et de la modification vierge).
 
 \begin{figure}[!h]
-\includegraphics[width=0.9\textwidth]{1.png}
+\includegraphics[width=0.9\textwidth]{okok.png}
 \caption{Graphique estimation de l'interception et de la modification vierge}
 \label{exemple somme}
 \end{figure}
 
 \vspace{2cm}
 
-Tous les 0 sont sur une ligne (en bas à gauche) et tous ceux sont sur une ligne (en haut à droite) en raison de la discrétion des données.\\
+Tous les 0 sont sur une ligne (en bas à gauche) et tous les 1 ceux sont sur une ligne (en haut à droite) en raison de la discrétion des données.\\
 
 \newpage
 
@@ -109,7 +109,7 @@ Comme on peut voir ci dessous :
 \begin{center}
 \begin{figure}[!h]
 \centerline{\includegraphics[width=0.6\textwidth]{bonresfit.png}}
-\caption{Graphique résidus vs tracés ajusté}
+\caption{Graphique résidus vs tracés ajustés}
 \label{exemple somme}
 \end{figure}
 
@@ -190,10 +190,15 @@ La valeur p obtenue est supérieure à la valeur seuil de 0,05 et donc, nous ne 
 
 \section{Résultats}
 
-Pour un modèle mixte simple avec un effet aléatoire, une façon dont nous pouvons rapporter les résultats est un graphique des données brutes avec les moyennes du modèle superposées. À partir du bootstrap, nous avons vu que nous ne pouvions pas rejeter l'hypothèse nulle. Il n'y a pas de preuves solides (p <0,05) d'un effet négatif de la modification sur l'abondance totale, mais nous avons pu voir que la modification est un prédicteur significatif d'Hydroid. Nous pouvons voir dans les boîtes à moustaches que la modification a des moyennes plus élevées pour JER, WAG et CLY.
+Pour un modèle mixte simple avec un effet aléatoire, une façon dont nous pouvons rapporter les résultats est un graphique des données brutes avec les moyennes du modèle superposées. À partir du bootstrap, nous avons vu que nous ne pouvions pas rejeter l'hypothèse nulle. Il n'y a pas de preuves solides (p <0,05) d'un effet négatif de la modification sur l'abondance totale, mais nous avons pu voir que la modification est un prédicteur significatif d'hydroïde. Nous pouvons voir dans les boîtes à moustaches que la modification a des moyennes plus élevées pour JER, WAG et CLY.
 
 
-Cf. fichier .ipynb
+\begin{figure}[!h]
+\centerline{\includegraphics[width=0.6\textwidth]{boxplot.png}}
+\caption{Boîtes à moustaches des modifications pour les Estuaires}
+\label{exemple somme}
+\end{figure}
+
 
 
 \end{document}
